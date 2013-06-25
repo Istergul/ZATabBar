@@ -1,0 +1,402 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		79DA32A7177884D600B2E8F2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79DA32A6177884D600B2E8F2 /* UIKit.framework */; };
+		79DA32A9177884D600B2E8F2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79DA32A8177884D600B2E8F2 /* Foundation.framework */; };
+		79DA32AB177884D600B2E8F2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79DA32AA177884D600B2E8F2 /* CoreGraphics.framework */; };
+		79DA32B1177884D600B2E8F2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 79DA32AF177884D600B2E8F2 /* InfoPlist.strings */; };
+		79DA32B3177884D600B2E8F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 79DA32B2177884D600B2E8F2 /* main.m */; };
+		79DA32B7177884D600B2E8F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 79DA32B6177884D600B2E8F2 /* AppDelegate.m */; };
+		79DA32B9177884D600B2E8F2 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DA32B8177884D600B2E8F2 /* Default.png */; };
+		79DA32BB177884D600B2E8F2 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DA32BA177884D600B2E8F2 /* Default@2x.png */; };
+		79DA32BD177884D600B2E8F2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DA32BC177884D600B2E8F2 /* Default-568h@2x.png */; };
+		79DA32C0177884D600B2E8F2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79DA32BF177884D600B2E8F2 /* ViewController.m */; };
+		79DA32C3177884D600B2E8F2 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79DA32C1177884D600B2E8F2 /* ViewController.xib */; };
+		79DA32CE1778851D00B2E8F2 /* ZATabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 79DA32CB1778851D00B2E8F2 /* ZATabBar.m */; };
+		79DA32CF1778851D00B2E8F2 /* ZATabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79DA32CD1778851D00B2E8F2 /* ZATabBarController.m */; };
+		79DA32DD1778861100B2E8F2 /* tabBarAR.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DA32D11778861100B2E8F2 /* tabBarAR.png */; };
+		79DA32DE1778861100B2E8F2 /* tabBarAR@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DA32D21778861100B2E8F2 /* tabBarAR@2x.png */; };
+		79DA32DF1778861100B2E8F2 /* tabBarARActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DA32D31778861100B2E8F2 /* tabBarARActive.png */; };
+		79DA32E01778861100B2E8F2 /* tabBarARActive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DA32D41778861100B2E8F2 /* tabBarARActive@2x.png */; };
+		79DA32E11778861100B2E8F2 /* tabBarGuide.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DA32D51778861100B2E8F2 /* tabBarGuide.png */; };
+		79DA32E21778861100B2E8F2 /* tabBarGuide@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DA32D61778861100B2E8F2 /* tabBarGuide@2x.png */; };
+		79DA32E31778861100B2E8F2 /* tabBarGuideActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DA32D71778861100B2E8F2 /* tabBarGuideActive.png */; };
+		79DA32E41778861100B2E8F2 /* tabBarGuideActive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DA32D81778861100B2E8F2 /* tabBarGuideActive@2x.png */; };
+		79DA32E51778861100B2E8F2 /* tabBarInfo.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DA32D91778861100B2E8F2 /* tabBarInfo.png */; };
+		79DA32E61778861100B2E8F2 /* tabBarInfo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DA32DA1778861100B2E8F2 /* tabBarInfo@2x.png */; };
+		79DA32E71778861100B2E8F2 /* tabBarInfoActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DA32DB1778861100B2E8F2 /* tabBarInfoActive.png */; };
+		79DA32E81778861100B2E8F2 /* tabBarInfoActive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DA32DC1778861100B2E8F2 /* tabBarInfoActive@2x.png */; };
+		79DA32ED1779747700B2E8F2 /* tabBarInvest.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DA32E91779747700B2E8F2 /* tabBarInvest.png */; };
+		79DA32EE1779747700B2E8F2 /* tabBarInvest@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DA32EA1779747700B2E8F2 /* tabBarInvest@2x.png */; };
+		79DA32EF1779747700B2E8F2 /* tabBarInvestActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DA32EB1779747700B2E8F2 /* tabBarInvestActive.png */; };
+		79DA32F01779747700B2E8F2 /* tabBarInvestActive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DA32EC1779747700B2E8F2 /* tabBarInvestActive@2x.png */; };
+		79DA32F21779785400B2E8F2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79DA32F11779785400B2E8F2 /* QuartzCore.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		79DA32A3177884D600B2E8F2 /* ZATabBarExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZATabBarExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		79DA32A6177884D600B2E8F2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		79DA32A8177884D600B2E8F2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		79DA32AA177884D600B2E8F2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		79DA32AE177884D600B2E8F2 /* ZATabBarExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ZATabBarExample-Info.plist"; sourceTree = "<group>"; };
+		79DA32B0177884D600B2E8F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		79DA32B2177884D600B2E8F2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		79DA32B4177884D600B2E8F2 /* ZATabBarExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZATabBarExample-Prefix.pch"; sourceTree = "<group>"; };
+		79DA32B5177884D600B2E8F2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		79DA32B6177884D600B2E8F2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		79DA32B8177884D600B2E8F2 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		79DA32BA177884D600B2E8F2 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		79DA32BC177884D600B2E8F2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		79DA32BE177884D600B2E8F2 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		79DA32BF177884D600B2E8F2 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		79DA32C2177884D600B2E8F2 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController.xib; sourceTree = "<group>"; };
+		79DA32CA1778851D00B2E8F2 /* ZATabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZATabBar.h; sourceTree = "<group>"; };
+		79DA32CB1778851D00B2E8F2 /* ZATabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZATabBar.m; sourceTree = "<group>"; };
+		79DA32CC1778851D00B2E8F2 /* ZATabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZATabBarController.h; sourceTree = "<group>"; };
+		79DA32CD1778851D00B2E8F2 /* ZATabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZATabBarController.m; sourceTree = "<group>"; };
+		79DA32D11778861100B2E8F2 /* tabBarAR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabBarAR.png; sourceTree = "<group>"; };
+		79DA32D21778861100B2E8F2 /* tabBarAR@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabBarAR@2x.png"; sourceTree = "<group>"; };
+		79DA32D31778861100B2E8F2 /* tabBarARActive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabBarARActive.png; sourceTree = "<group>"; };
+		79DA32D41778861100B2E8F2 /* tabBarARActive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabBarARActive@2x.png"; sourceTree = "<group>"; };
+		79DA32D51778861100B2E8F2 /* tabBarGuide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabBarGuide.png; sourceTree = "<group>"; };
+		79DA32D61778861100B2E8F2 /* tabBarGuide@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabBarGuide@2x.png"; sourceTree = "<group>"; };
+		79DA32D71778861100B2E8F2 /* tabBarGuideActive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabBarGuideActive.png; sourceTree = "<group>"; };
+		79DA32D81778861100B2E8F2 /* tabBarGuideActive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabBarGuideActive@2x.png"; sourceTree = "<group>"; };
+		79DA32D91778861100B2E8F2 /* tabBarInfo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabBarInfo.png; sourceTree = "<group>"; };
+		79DA32DA1778861100B2E8F2 /* tabBarInfo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabBarInfo@2x.png"; sourceTree = "<group>"; };
+		79DA32DB1778861100B2E8F2 /* tabBarInfoActive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabBarInfoActive.png; sourceTree = "<group>"; };
+		79DA32DC1778861100B2E8F2 /* tabBarInfoActive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabBarInfoActive@2x.png"; sourceTree = "<group>"; };
+		79DA32E91779747700B2E8F2 /* tabBarInvest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabBarInvest.png; sourceTree = "<group>"; };
+		79DA32EA1779747700B2E8F2 /* tabBarInvest@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabBarInvest@2x.png"; sourceTree = "<group>"; };
+		79DA32EB1779747700B2E8F2 /* tabBarInvestActive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabBarInvestActive.png; sourceTree = "<group>"; };
+		79DA32EC1779747700B2E8F2 /* tabBarInvestActive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabBarInvestActive@2x.png"; sourceTree = "<group>"; };
+		79DA32F11779785400B2E8F2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		79DA32A0177884D600B2E8F2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79DA32F21779785400B2E8F2 /* QuartzCore.framework in Frameworks */,
+				79DA32A7177884D600B2E8F2 /* UIKit.framework in Frameworks */,
+				79DA32A9177884D600B2E8F2 /* Foundation.framework in Frameworks */,
+				79DA32AB177884D600B2E8F2 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		79DA329A177884D600B2E8F2 = {
+			isa = PBXGroup;
+			children = (
+				79DA32AC177884D600B2E8F2 /* ZATabBarExample */,
+				79DA32A5177884D600B2E8F2 /* Frameworks */,
+				79DA32A4177884D600B2E8F2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		79DA32A4177884D600B2E8F2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				79DA32A3177884D600B2E8F2 /* ZATabBarExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		79DA32A5177884D600B2E8F2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				79DA32F11779785400B2E8F2 /* QuartzCore.framework */,
+				79DA32A6177884D600B2E8F2 /* UIKit.framework */,
+				79DA32A8177884D600B2E8F2 /* Foundation.framework */,
+				79DA32AA177884D600B2E8F2 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		79DA32AC177884D600B2E8F2 /* ZATabBarExample */ = {
+			isa = PBXGroup;
+			children = (
+				79DA32D01778861100B2E8F2 /* Resources */,
+				79DA32C91778851D00B2E8F2 /* ZATabBar */,
+				79DA32B5177884D600B2E8F2 /* AppDelegate.h */,
+				79DA32B6177884D600B2E8F2 /* AppDelegate.m */,
+				79DA32BE177884D600B2E8F2 /* ViewController.h */,
+				79DA32BF177884D600B2E8F2 /* ViewController.m */,
+				79DA32C1177884D600B2E8F2 /* ViewController.xib */,
+				79DA32AD177884D600B2E8F2 /* Supporting Files */,
+			);
+			path = ZATabBarExample;
+			sourceTree = "<group>";
+		};
+		79DA32AD177884D600B2E8F2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				79DA32AE177884D600B2E8F2 /* ZATabBarExample-Info.plist */,
+				79DA32AF177884D600B2E8F2 /* InfoPlist.strings */,
+				79DA32B2177884D600B2E8F2 /* main.m */,
+				79DA32B4177884D600B2E8F2 /* ZATabBarExample-Prefix.pch */,
+				79DA32B8177884D600B2E8F2 /* Default.png */,
+				79DA32BA177884D600B2E8F2 /* Default@2x.png */,
+				79DA32BC177884D600B2E8F2 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		79DA32C91778851D00B2E8F2 /* ZATabBar */ = {
+			isa = PBXGroup;
+			children = (
+				79DA32CA1778851D00B2E8F2 /* ZATabBar.h */,
+				79DA32CB1778851D00B2E8F2 /* ZATabBar.m */,
+				79DA32CC1778851D00B2E8F2 /* ZATabBarController.h */,
+				79DA32CD1778851D00B2E8F2 /* ZATabBarController.m */,
+			);
+			path = ZATabBar;
+			sourceTree = "<group>";
+		};
+		79DA32D01778861100B2E8F2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				79DA32D11778861100B2E8F2 /* tabBarAR.png */,
+				79DA32D21778861100B2E8F2 /* tabBarAR@2x.png */,
+				79DA32D31778861100B2E8F2 /* tabBarARActive.png */,
+				79DA32D41778861100B2E8F2 /* tabBarARActive@2x.png */,
+				79DA32D51778861100B2E8F2 /* tabBarGuide.png */,
+				79DA32D61778861100B2E8F2 /* tabBarGuide@2x.png */,
+				79DA32D71778861100B2E8F2 /* tabBarGuideActive.png */,
+				79DA32D81778861100B2E8F2 /* tabBarGuideActive@2x.png */,
+				79DA32D91778861100B2E8F2 /* tabBarInfo.png */,
+				79DA32DA1778861100B2E8F2 /* tabBarInfo@2x.png */,
+				79DA32DB1778861100B2E8F2 /* tabBarInfoActive.png */,
+				79DA32DC1778861100B2E8F2 /* tabBarInfoActive@2x.png */,
+				79DA32E91779747700B2E8F2 /* tabBarInvest.png */,
+				79DA32EA1779747700B2E8F2 /* tabBarInvest@2x.png */,
+				79DA32EB1779747700B2E8F2 /* tabBarInvestActive.png */,
+				79DA32EC1779747700B2E8F2 /* tabBarInvestActive@2x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		79DA32A2177884D600B2E8F2 /* ZATabBarExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79DA32C6177884D600B2E8F2 /* Build configuration list for PBXNativeTarget "ZATabBarExample" */;
+			buildPhases = (
+				79DA329F177884D600B2E8F2 /* Sources */,
+				79DA32A0177884D600B2E8F2 /* Frameworks */,
+				79DA32A1177884D600B2E8F2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZATabBarExample;
+			productName = ZATabBarExample;
+			productReference = 79DA32A3177884D600B2E8F2 /* ZATabBarExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		79DA329B177884D600B2E8F2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = Istergul;
+			};
+			buildConfigurationList = 79DA329E177884D600B2E8F2 /* Build configuration list for PBXProject "ZATabBarExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 79DA329A177884D600B2E8F2;
+			productRefGroup = 79DA32A4177884D600B2E8F2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				79DA32A2177884D600B2E8F2 /* ZATabBarExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		79DA32A1177884D600B2E8F2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79DA32B1177884D600B2E8F2 /* InfoPlist.strings in Resources */,
+				79DA32B9177884D600B2E8F2 /* Default.png in Resources */,
+				79DA32BB177884D600B2E8F2 /* Default@2x.png in Resources */,
+				79DA32BD177884D600B2E8F2 /* Default-568h@2x.png in Resources */,
+				79DA32C3177884D600B2E8F2 /* ViewController.xib in Resources */,
+				79DA32DD1778861100B2E8F2 /* tabBarAR.png in Resources */,
+				79DA32DE1778861100B2E8F2 /* tabBarAR@2x.png in Resources */,
+				79DA32DF1778861100B2E8F2 /* tabBarARActive.png in Resources */,
+				79DA32E01778861100B2E8F2 /* tabBarARActive@2x.png in Resources */,
+				79DA32E11778861100B2E8F2 /* tabBarGuide.png in Resources */,
+				79DA32E21778861100B2E8F2 /* tabBarGuide@2x.png in Resources */,
+				79DA32E31778861100B2E8F2 /* tabBarGuideActive.png in Resources */,
+				79DA32E41778861100B2E8F2 /* tabBarGuideActive@2x.png in Resources */,
+				79DA32E51778861100B2E8F2 /* tabBarInfo.png in Resources */,
+				79DA32E61778861100B2E8F2 /* tabBarInfo@2x.png in Resources */,
+				79DA32E71778861100B2E8F2 /* tabBarInfoActive.png in Resources */,
+				79DA32E81778861100B2E8F2 /* tabBarInfoActive@2x.png in Resources */,
+				79DA32ED1779747700B2E8F2 /* tabBarInvest.png in Resources */,
+				79DA32EE1779747700B2E8F2 /* tabBarInvest@2x.png in Resources */,
+				79DA32EF1779747700B2E8F2 /* tabBarInvestActive.png in Resources */,
+				79DA32F01779747700B2E8F2 /* tabBarInvestActive@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		79DA329F177884D600B2E8F2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				79DA32B3177884D600B2E8F2 /* main.m in Sources */,
+				79DA32B7177884D600B2E8F2 /* AppDelegate.m in Sources */,
+				79DA32C0177884D600B2E8F2 /* ViewController.m in Sources */,
+				79DA32CE1778851D00B2E8F2 /* ZATabBar.m in Sources */,
+				79DA32CF1778851D00B2E8F2 /* ZATabBarController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		79DA32AF177884D600B2E8F2 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				79DA32B0177884D600B2E8F2 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		79DA32C1177884D600B2E8F2 /* ViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				79DA32C2177884D600B2E8F2 /* en */,
+			);
+			name = ViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		79DA32C4177884D600B2E8F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		79DA32C5177884D600B2E8F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		79DA32C7177884D600B2E8F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ZATabBarExample/ZATabBarExample-Prefix.pch";
+				INFOPLIST_FILE = "ZATabBarExample/ZATabBarExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		79DA32C8177884D600B2E8F2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ZATabBarExample/ZATabBarExample-Prefix.pch";
+				INFOPLIST_FILE = "ZATabBarExample/ZATabBarExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		79DA329E177884D600B2E8F2 /* Build configuration list for PBXProject "ZATabBarExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79DA32C4177884D600B2E8F2 /* Debug */,
+				79DA32C5177884D600B2E8F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		79DA32C6177884D600B2E8F2 /* Build configuration list for PBXNativeTarget "ZATabBarExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				79DA32C7177884D600B2E8F2 /* Debug */,
+				79DA32C8177884D600B2E8F2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 79DA329B177884D600B2E8F2 /* Project object */;
+}
