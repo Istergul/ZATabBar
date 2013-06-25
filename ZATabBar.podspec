@@ -4,7 +4,6 @@ Pod::Spec.new do |s|
   s.platform     = :ios, "5.0"
   s.summary      = "Tabbar without labels."
   s.homepage     = "https://github.com/Istergul/ZATabBar"
-  git@github.com:Istergul/ZATabBar.git
   s.license      = 'MIT'
   s.author       = { "Istergul" => "istergul@gmail.com" }
   s.source       = { :git => "http://github.com/Istergul/ZATabBar.git", :tag => "0.0.1" }
