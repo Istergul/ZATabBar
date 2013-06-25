@@ -1,6 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "ZATabBar"
   s.version      = "0.0.1"
+  s.platform     = :ios, "5.0"
   s.summary      = "Tabbar without labels."
   s.homepage     = "https://github.com/Istergul/ZATabBar"
   git@github.com:Istergul/ZATabBar.git
