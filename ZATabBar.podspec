@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/Istergul/ZATabBar"
   s.license      = 'MIT'
   s.author       = { "Istergul" => "istergul@gmail.com" }
-  s.source       = { :git => "http://github.com/Istergul/ZATabBar.git", :tag => "0.0.1" }
+  s.source       = { :git => "https://github.com/Istergul/ZATabBar.git", :tag => "0.0.1" }
   s.source_files = 'Classes'
   s.exclude_files = 'Classes/Exclude'
   s.requires_arc = true
