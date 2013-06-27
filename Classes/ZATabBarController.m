@@ -53,7 +53,7 @@
     
     CGRect transFrame = CGRectMake(0, 0, winFrame.size.width, winFrame.size.height - kTabBarHeight);
     self.transitionView = [[UIView alloc] initWithFrame:transFrame];
-    _transitionView.backgroundColor =  [UIColor greenColor];
+    _transitionView.backgroundColor =  [UIColor clearColor];
     _transitionView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     _viewControllers = [[NSMutableArray alloc] init];
 }
@@ -84,19 +84,21 @@
     
     self.view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
     self.view.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-    self.view.backgroundColor = [UIColor redColor];
+    self.view.backgroundColor = [UIColor clearColor];
     
     [self.view addSubview:_transitionView];
     [self.view addSubview:_tabBar];
+    
+    self.selectedIndex = 0;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    self.selectedIndex = 0;
-}
+//- (void)viewWillAppear:(BOOL)animated {
+//    self.selectedIndex = 0;
+//}
 
 - (void)viewDidUnload {
 	[super viewDidUnload];
@@ -174,10 +176,16 @@
 	UIViewController *selectedVC = [self.viewControllers objectAtIndex:index];
 	
     if (selectedVC.hidesBottomBarWhenPushed) {
+        NSLog(@"hide tabbar");
         [self hidesTabBar:YES animated:NO];
     } else {
+        NSLog(@"show tabbar");
         [self hidesTabBar:NO animated:NO];
     }
+    
+    [self.viewControllers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [(UIViewController *)obj view].hidden = (idx == index) ? NO : YES;
+    }];
     
 	if ([selectedVC.view isDescendantOfView:_transitionView]) {
         [_transitionView bringSubviewToFront:selectedVC.view];
@@ -194,6 +202,8 @@
             }
         }
 	}
+//    [selectedVC viewWillAppear:NO];
+//    [selectedVC viewDidAppear:NO];
 
     // Notify the delegate, the viewcontroller has been changed.
     if ([_delegate respondsToSelector:@selector(tabBarController:didSelectViewController::)]) {
