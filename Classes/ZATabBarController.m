@@ -171,8 +171,10 @@
     if (_selectedIndex == index && [[_transitionView subviews] count] != 0) {
         return;
     }
+    int currentIndex = _selectedIndex;
     _selectedIndex = index;
     
+    UIViewController *currentVC = [self.viewControllers objectAtIndex:currentIndex];
 	UIViewController *selectedVC = [self.viewControllers objectAtIndex:index];
 	
     if (selectedVC.hidesBottomBarWhenPushed) {
@@ -186,6 +188,9 @@
     [self.viewControllers enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         [(UIViewController *)obj view].hidden = (idx == index) ? NO : YES;
     }];
+    
+    [currentVC viewWillDisappear:NO];
+    [currentVC viewDidDisappear:NO];
     
 	if ([selectedVC.view isDescendantOfView:_transitionView]) {
         [_transitionView bringSubviewToFront:selectedVC.view];
@@ -202,8 +207,8 @@
             }
         }
 	}
-//    [selectedVC viewWillAppear:NO];
-//    [selectedVC viewDidAppear:NO];
+    [selectedVC viewWillAppear:NO];
+    [selectedVC viewDidAppear:NO];
 
     // Notify the delegate, the viewcontroller has been changed.
     if ([_delegate respondsToSelector:@selector(tabBarController:didSelectViewController::)]) {
