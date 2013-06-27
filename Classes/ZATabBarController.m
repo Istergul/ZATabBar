@@ -42,20 +42,17 @@
 - (id)initWithViewControllers:(NSArray *)vcs imageArray:(NSArray *)arr {
     self = [super init];
     if (self) {
-//        [self configure];
+        [self configure];
         [self setViewControllers:vcs imageArray:arr];
     }
     return self;
 }
 
 - (void)configure {
-    _containerView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
-//    NSLog(@"^^ %@", NSStringFromCGRect(_containerView.frame));
-    _containerView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-    _containerView.backgroundColor = [UIColor redColor];
+    CGRect winFrame = [[UIScreen mainScreen] applicationFrame];
     
-    CGRect transFrame = CGRectMake(0, 0, _containerView.bounds.size.width, _containerView.bounds.size.height - kTabBarHeight);
-    _transitionView = [[UIView alloc] initWithFrame:transFrame];
+    CGRect transFrame = CGRectMake(0, 0, winFrame.size.width, winFrame.size.height - kTabBarHeight);
+    self.transitionView = [[UIView alloc] initWithFrame:transFrame];
     _transitionView.backgroundColor =  [UIColor greenColor];
     _transitionView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     _viewControllers = [[NSMutableArray alloc] init];
@@ -65,8 +62,9 @@
     for (int i = 0; i < [_viewControllers count]; i++) {
         [self removeViewControllerAtIndex:i];
     }
+    CGRect winFrame = [[UIScreen mainScreen] applicationFrame];
     
-    CGRect tabFrame = CGRectMake(0, _containerView.bounds.size.height - kTabBarHeight, _containerView.bounds.size.width, kTabBarHeight);
+    CGRect tabFrame = CGRectMake(0, winFrame.size.height - kTabBarHeight, winFrame.size.width, kTabBarHeight);
     _tabBar = [[ZATabBar alloc] initWithFrame:tabFrame];
     _tabBar.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin;
     _tabBar.delegate = self;
@@ -83,10 +81,13 @@
 
 - (void)loadView {
 	[super loadView];
-	
-	[_containerView addSubview:_transitionView];
-	[_containerView addSubview:_tabBar];
-	self.view = _containerView;
+    
+    self.view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
+    self.view.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    self.view.backgroundColor = [UIColor redColor];
+    
+    [self.view addSubview:_transitionView];
+    [self.view addSubview:_tabBar];
 }
 
 - (void)viewDidLoad {
@@ -109,29 +110,7 @@
 }
 
 
-//- (BOOL)tabBarTransparent
-//{
-//	return _tabBarTransparent;
-//}
-
-//- (void)setTabBarTransparent:(BOOL)yesOrNo {
-//	if (yesOrNo == YES) {
-//		_transitionView.frame = _containerView.bounds;
-//	} else {
-//		_transitionView.frame = CGRectMake(0, 0, _containerView.bounds.size.width, _containerView.bounds.size.height - kTabBarHeight);
-//	}
-//}
-
 - (void)hidesTabBar:(BOOL)hide animated:(BOOL)animated {
-//	if (hide == YES) {
-//		if (self.tabBar.frame.origin.y == self.view.bounds.size.height) {
-//			return;
-//		}
-//	} else {
-//		if (self.tabBar.frame.origin.y == self.view.bounds.size.height - kTabBarHeight) {
-//			return;
-//		}
-//	}
 	
     CGRect tabBarFrame = self.tabBar.frame;
     CGRect transFrame = self.view.bounds;
@@ -151,8 +130,6 @@
         self.tabBar.frame = tabBarFrame;
         self.transitionView.frame = transFrame;
 	}
-//    NSLog(@"trans frame %@", NSStringFromCGRect(self.transitionView.frame));
-//    NSLog(@"tabbar frame %@", NSStringFromCGRect(self.tabBar.frame));
 }
 
 - (UIViewController *)selectedViewController {
@@ -192,28 +169,19 @@
     if (_selectedIndex == index && [[_transitionView subviews] count] != 0) {
         return;
     }
-//    NSLog(@"Display View.");
     _selectedIndex = index;
     
 	UIViewController *selectedVC = [self.viewControllers objectAtIndex:index];
 	
     if (selectedVC.hidesBottomBarWhenPushed) {
-//        NSLog(@"hides");
         [self hidesTabBar:YES animated:NO];
     } else {
-//        NSLog(@"no hides");
         [self hidesTabBar:NO animated:NO];
     }
-    
-//    for (UIView *v in [_transitionView subviews]) {
-//        [v removeFromSuperview];
-//    }
-//    NSLog(@"%@", NSStringFromCGRect(_transitionView.frame));
     
 	if ([selectedVC.view isDescendantOfView:_transitionView]) {
         [_transitionView bringSubviewToFront:selectedVC.view];
     } else {
-//        NSLog(@"^ %@", NSStringFromCGRect(selectedVC.view.frame));
         while (YES) {
             if (selectedVC.isViewLoaded) {
                 selectedVC.view.frame = _transitionView.bounds;
@@ -226,7 +194,7 @@
             }
         }
 	}
-    
+
     // Notify the delegate, the viewcontroller has been changed.
     if ([_delegate respondsToSelector:@selector(tabBarController:didSelectViewController::)]) {
         [_delegate tabBarController:self didSelectViewController:selectedVC];
@@ -244,17 +212,19 @@
 
 #pragma mark - autorotate
 
-- (NSInteger)supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskAll;
+-(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    // You do not need this method if you are not supporting earlier iOS Versions
+    return [self.selectedViewController shouldAutorotateToInterfaceOrientation:interfaceOrientation];
 }
 
-// Determine iOS 6 Autorotation.
-- (BOOL)shouldAutorotate {
-    return YES;
+-(NSUInteger)supportedInterfaceOrientations {
+    if (self.selectedViewController)
+        return [self.selectedViewController supportedInterfaceOrientations];
+    
+    return UIInterfaceOrientationMaskPortrait;
 }
 
-// handle iOS 5 Orientation as normal
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+-(BOOL)shouldAutorotate {
     return YES;
 }
 

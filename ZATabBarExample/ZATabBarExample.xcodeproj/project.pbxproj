@@ -37,6 +37,7 @@
 		79DA32EF1779747700B2E8F2 /* tabBarInvestActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DA32EB1779747700B2E8F2 /* tabBarInvestActive.png */; };
 		79DA32F01779747700B2E8F2 /* tabBarInvestActive@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DA32EC1779747700B2E8F2 /* tabBarInvestActive@2x.png */; };
 		79DA32F21779785400B2E8F2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79DA32F11779785400B2E8F2 /* QuartzCore.framework */; };
+		79DA3336177C325E00B2E8F2 /* UINavigationController+rotateIOS6.m in Sources */ = {isa = PBXBuildFile; fileRef = 79DA3335177C325E00B2E8F2 /* UINavigationController+rotateIOS6.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +78,8 @@
 		79DA32EB1779747700B2E8F2 /* tabBarInvestActive.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tabBarInvestActive.png; sourceTree = "<group>"; };
 		79DA32EC1779747700B2E8F2 /* tabBarInvestActive@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabBarInvestActive@2x.png"; sourceTree = "<group>"; };
 		79DA32F11779785400B2E8F2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		79DA3334177C325E00B2E8F2 /* UINavigationController+rotateIOS6.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+rotateIOS6.h"; sourceTree = "<group>"; };
+		79DA3335177C325E00B2E8F2 /* UINavigationController+rotateIOS6.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+rotateIOS6.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +134,8 @@
 				79DA32B6177884D600B2E8F2 /* AppDelegate.m */,
 				79DA32BE177884D600B2E8F2 /* ViewController.h */,
 				79DA32BF177884D600B2E8F2 /* ViewController.m */,
+				79DA3334177C325E00B2E8F2 /* UINavigationController+rotateIOS6.h */,
+				79DA3335177C325E00B2E8F2 /* UINavigationController+rotateIOS6.m */,
 				79DA32C1177884D600B2E8F2 /* ViewController.xib */,
 				79DA32AD177884D600B2E8F2 /* Supporting Files */,
 			);
@@ -272,6 +277,7 @@
 				79DA32C0177884D600B2E8F2 /* ViewController.m in Sources */,
 				79DA32CE1778851D00B2E8F2 /* ZATabBar.m in Sources */,
 				79DA32CF1778851D00B2E8F2 /* ZATabBarController.m in Sources */,
+				79DA3336177C325E00B2E8F2 /* UINavigationController+rotateIOS6.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,6 +365,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZATabBarExample/ZATabBarExample-Prefix.pch";
 				INFOPLIST_FILE = "ZATabBarExample/ZATabBarExample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -370,6 +377,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZATabBarExample/ZATabBarExample-Prefix.pch";
 				INFOPLIST_FILE = "ZATabBarExample/ZATabBarExample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

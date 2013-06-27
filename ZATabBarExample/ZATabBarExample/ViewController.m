@@ -26,4 +26,18 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation
+{
+    if ((toInterfaceOrientation == UIInterfaceOrientationPortrait) || (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft) || (toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
+- (NSInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskPortrait | UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight;
+}
+
 @end

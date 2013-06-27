@@ -8,8 +8,6 @@
 
 @interface ZATabBar ()
 
-@property (nonatomic, strong) NSMutableArray *buttonImages;
-
 @end
 
 @implementation ZATabBar
@@ -51,7 +49,6 @@
     [self addSubview:self.backBtnView];
     
     self.buttons = [[NSMutableArray alloc] init];
-    self.buttonImages = [[NSMutableArray alloc] init];
 }
 
 - (CGFloat)buttonItemWidth {
@@ -136,8 +133,6 @@
 }
 
 - (void)insertTabWithImageDic:(NSDictionary *)dict atIndex:(NSUInteger)index {
-    [self.buttonImages insertObject:dict atIndex:index];
-    
     // Re-index the buttons
     for (UIButton *b in self.buttons) {
         if (b.tag >= index) {
