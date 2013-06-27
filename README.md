@@ -1,4 +1,4 @@
-ZATabBar ia s iOS component for creating tabbar without labels.
+ZATabBar is iOS component for creating tabbar without labels.
 
 ## Installing
 
