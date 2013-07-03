@@ -71,6 +71,7 @@
         @"Active":  [UIImage imageNamed:@"tabBarInvestActive"]
     };
     [tabBarController insertViewController:[[ViewController alloc] init] withImageDic:imgDict3 atIndex:3];
+    tabBarController.tabBar.buttonInsets = UIEdgeInsetsMake(5, 2, 5, 2);
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
