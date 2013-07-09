@@ -18,8 +18,8 @@
 		79DA32BD177884D600B2E8F2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DA32BC177884D600B2E8F2 /* Default-568h@2x.png */; };
 		79DA32C0177884D600B2E8F2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79DA32BF177884D600B2E8F2 /* ViewController.m */; };
 		79DA32C3177884D600B2E8F2 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 79DA32C1177884D600B2E8F2 /* ViewController.xib */; };
-		79DA32CE1778851D00B2E8F2 /* ZATabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 79DA32CB1778851D00B2E8F2 /* ZATabBar.m */; };
-		79DA32CF1778851D00B2E8F2 /* ZATabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79DA32CD1778851D00B2E8F2 /* ZATabBarController.m */; };
+		79DA32CE1778851D00B2E8F2 /* ZATabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 79DA32CB1778851D00B2E8F2 /* ZATabBar.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		79DA32CF1778851D00B2E8F2 /* ZATabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 79DA32CD1778851D00B2E8F2 /* ZATabBarController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		79DA32DD1778861100B2E8F2 /* tabBarAR.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DA32D11778861100B2E8F2 /* tabBarAR.png */; };
 		79DA32DE1778861100B2E8F2 /* tabBarAR@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DA32D21778861100B2E8F2 /* tabBarAR@2x.png */; };
 		79DA32DF1778861100B2E8F2 /* tabBarARActive.png in Resources */ = {isa = PBXBuildFile; fileRef = 79DA32D31778861100B2E8F2 /* tabBarARActive.png */; };

@@ -2,7 +2,6 @@
 //  ZATabBarController.m
 //  CityGuide
 //
-//  Created by Istergul on 06.05.13.
 //  Copyright (c) 2013 Istergul. All rights reserved.
 //
 
@@ -13,8 +12,9 @@
 
 @interface ZATabBarController ()
 
-@property (nonatomic, strong) UIView *containerView;
-@property (nonatomic, strong) UIView *transitionView;
+@property (nonatomic, copy) NSMutableArray *viewControllers;
+
+@property (nonatomic, retain) UIView *transitionView;
 
 @end
 
@@ -35,6 +35,7 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        [self configure];
     }
     return self;
 }
@@ -52,13 +53,25 @@
     CGRect winFrame = [[UIScreen mainScreen] applicationFrame];
     
     CGRect transFrame = CGRectMake(0, 0, winFrame.size.width, winFrame.size.height - kTabBarHeight);
-    self.transitionView = [[UIView alloc] initWithFrame:transFrame];
-    _transitionView.backgroundColor =  [UIColor clearColor];
-    _transitionView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-    _viewControllers = [[NSMutableArray alloc] init];
+    self.transitionView = [[[UIView alloc] initWithFrame:transFrame] autorelease];
+    self.transitionView.backgroundColor =  [UIColor clearColor];
+    self.transitionView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    
+    _viewControllers = [[NSMutableArray array] retain];
+}
+
+- (void)dealloc {
+    [self.transitionView release];
+    [self.viewControllers release];
+    
+    [_tabBar release];
+    
+    [super dealloc];
 }
 
 - (void)setViewControllers:(NSArray *)vcs imageArray:(NSArray *)arr {
+    [_tabBar release];
+    
     for (int i = 0; i < [_viewControllers count]; i++) {
         [self removeViewControllerAtIndex:i];
     }
@@ -82,29 +95,18 @@
 - (void)loadView {
 	[super loadView];
     
-    self.view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
+    self.view = [[[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]] autorelease];
     self.view.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     self.view.backgroundColor = [UIColor clearColor];
     
-    [self.view addSubview:_transitionView];
-    [self.view addSubview:_tabBar];
+    [self.view addSubview:self.transitionView];
+    [self.view addSubview:self.tabBar];
     
     self.selectedIndex = 0;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-}
-
-//- (void)viewWillAppear:(BOOL)animated {
-//    self.selectedIndex = 0;
-//}
-
-- (void)viewDidUnload {
-	[super viewDidUnload];
-	
-	_tabBar = nil;
-	_viewControllers = nil;
 }
 
 - (void)didReceiveMemoryWarning {

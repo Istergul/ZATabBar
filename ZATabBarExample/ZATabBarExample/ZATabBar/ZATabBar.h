@@ -8,16 +8,12 @@
 @protocol ZATabBarDelegate;
 
 @interface ZATabBar : UIView
-{
-    CGFloat _buttonItemWidth;
-}
 
-@property (nonatomic, strong) UIImageView *backgroundView;
-@property (nonatomic, weak) id<ZATabBarDelegate> delegate;
-@property (nonatomic, strong) NSMutableArray *buttons;
-@property (nonatomic, strong) UIView *backBtnView;
+@property (nonatomic, retain) UIImageView *backgroundView;
+@property (nonatomic, assign) id<ZATabBarDelegate> delegate;
 
-@property (nonatomic, strong) UIColor *selectedColor;
+@property (nonatomic, retain) UIColor *selectedColor;
+
 @property (nonatomic) CGFloat buttonItemWidth;
 @property (nonatomic) UIEdgeInsets buttonInsets;
 

@@ -2,7 +2,6 @@
 //  ZATabBarController.h
 //  CityGuide
 //
-//  Created by Istergul on 06.05.13.
 //  Copyright (c) 2013 Istergul. All rights reserved.
 //
 
@@ -13,14 +12,12 @@
 
 @interface ZATabBarController : UIViewController <ZATabBarDelegate>
 
-@property (nonatomic, copy) NSMutableArray *viewControllers;
 @property (nonatomic, readonly) UIViewController *selectedViewController;
 @property (nonatomic) NSUInteger selectedIndex;
 
 @property (nonatomic, readonly) ZATabBar *tabBar;
-@property (nonatomic, weak) id<ZATabBarControllerDelegate> delegate;
+@property (nonatomic, assign) id<ZATabBarControllerDelegate> delegate;
 
-@property (nonatomic) BOOL tabBarTransparent;
 @property (nonatomic) BOOL tabBarHidden;
 
 - (id)initWithViewControllers:(NSArray *)vcs imageArray:(NSArray *)arr;

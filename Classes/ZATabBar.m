@@ -8,6 +8,9 @@
 
 @interface ZATabBar ()
 
+@property (nonatomic, retain) UIView *backBtnView;
+@property (nonatomic, retain) NSMutableArray *buttons;
+
 @end
 
 @implementation ZATabBar
@@ -38,26 +41,31 @@
 }
 
 - (void)configure {
+    _buttonItemWidth = 50.0f;
+    
     self.backgroundColor = [UIColor clearColor];
-    _backgroundView = [[UIImageView alloc] initWithFrame:self.bounds];
-    _backgroundView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    self.backgroundView = [[[UIImageView alloc] initWithFrame:self.bounds] autorelease];
+    self.backgroundView.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     [self addSubview:_backgroundView];
     
-    self.backBtnView = [[UIView alloc] init];
+    self.backBtnView = [[[UIView alloc] init] autorelease];
     self.backBtnView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
-//    [self calcPositionButtons];
     [self addSubview:self.backBtnView];
     
-    self.buttons = [[NSMutableArray alloc] init];
+    self.buttons = [NSMutableArray array];
 }
 
-- (CGFloat)buttonItemWidth {
-    CGFloat res = (_buttonItemWidth) ? _buttonItemWidth : 50.0f;
-    return res;
+- (void)dealloc {
+    [self.backgroundColor release];
+    [self.backgroundView release];
+    [self.backBtnView release];
+    [self.buttons release];
+    
+    [super dealloc];
 }
 
-- (void)setButtonItemWidth:(CGFloat)buttonItemWidth {
-    _buttonItemWidth = buttonItemWidth;
+- (void)setButtonItemWidth:(CGFloat)width {
+    _buttonItemWidth = width;
     [self calcPositionButtons];
 }
 
@@ -106,13 +114,11 @@
 	for (int i = 0; i < [self.buttons count]; i++) {
 		UIButton *b = [self.buttons objectAtIndex:i];
 		b.selected = NO;
-//        b.highlighted = NO;
         b.backgroundColor = [UIColor clearColor];
 		b.userInteractionEnabled = YES;
 	}
 	UIButton *btn = [self.buttons objectAtIndex:index];
 	btn.selected = YES;
-//    btn.highlighted = YES;
     UIColor *color = (self.selectedColor) ? self.selectedColor : [UIColor clearColor];
     btn.backgroundColor = color;
     btn.userInteractionEnabled = NO;
